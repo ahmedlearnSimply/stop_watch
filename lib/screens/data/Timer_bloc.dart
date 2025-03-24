@@ -8,6 +8,9 @@ import 'dart:async';
 class TimerBloc extends Bloc<TimerEvent, TimerState> {
   TimerBloc() : super(TimerState.initial()) {
     on<TimerStarted>(_onStarted);
+    on<TimerPaused>(_onPaused);
+    on<TimerResumed>(_onResumed);
+    on<TimerReset>(_onReset);
   }
 
   Timer? timer;
